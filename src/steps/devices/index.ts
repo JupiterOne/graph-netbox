@@ -55,7 +55,7 @@ export async function buildServiceHasDeviceRelationship({
         createDirectRelationship({
           from: serviceEntity,
           to: deviceEntity,
-          _class: RelationshipClass.HAS,
+          _class: RelationshipClass.MANAGES,
         }),
       );
     },
@@ -75,7 +75,7 @@ export const deviceSteps: IntegrationStep<IntegrationConfig>[] = [
     id: Steps.RELATIONSHIPS_SERVICE_DEVICE,
     name: 'Build netbox_service -HAS-> netbox_device relationships',
     entities: [],
-    relationships: [Relationships.SERVICE_HAS_DEVICE],
+    relationships: [Relationships.SERVICE_MANAGES_DEVICE],
     dependsOn: [Steps.SERVICE, Steps.DEVICES],
     executionHandler: buildServiceHasDeviceRelationship,
   },

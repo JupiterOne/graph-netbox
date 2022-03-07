@@ -107,7 +107,7 @@ The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |
-| `netbox_service`      | **HAS**               | `netbox_device`       |
+| `netbox_service`      | **MANAGES**           | `netbox_device`       |
 
 <!--
 ********************************************************************************

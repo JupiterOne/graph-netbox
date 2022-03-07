@@ -60,10 +60,10 @@ export const Entities = {
 };
 
 export const Relationships = {
-  SERVICE_HAS_DEVICE: {
-    _type: 'netbox_service_has_device',
+  SERVICE_MANAGES_DEVICE: {
+    _type: 'netbox_service_manages_device',
     sourceType: Entities.SERVICE._type,
-    _class: RelationshipClass.HAS,
+    _class: RelationshipClass.MANAGES,
     targetType: Entities.DEVICE._type,
   },
 };
