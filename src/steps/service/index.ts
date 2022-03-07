@@ -6,9 +6,9 @@ import {
 import { NetboxClient } from '../../client';
 import { IntegrationConfig } from '../../config';
 import { Entities, Steps } from '../constants';
-import { createAccountEntity } from './converter';
+import { createServiceEntity } from './converter';
 
-export async function fetchAccount({
+export async function fetchService({
   instance,
   jobState,
 }: IntegrationStepExecutionContext<IntegrationConfig>) {
@@ -18,7 +18,7 @@ export async function fetchAccount({
   const status = await apiClient.status();
 
   await jobState.addEntity(
-    createAccountEntity({
+    createServiceEntity({
       accountName: instance.name,
       host,
       data: status,
@@ -26,13 +26,13 @@ export async function fetchAccount({
   );
 }
 
-export const accountSteps: IntegrationStep<IntegrationConfig>[] = [
+export const serviceSteps: IntegrationStep<IntegrationConfig>[] = [
   {
-    id: Steps.ACCOUNT,
-    name: 'Fetch Account',
-    entities: [Entities.ACCOUNT],
+    id: Steps.SERVICE,
+    name: 'Fetch Service',
+    entities: [Entities.SERVICE],
     relationships: [],
     dependsOn: [],
-    executionHandler: fetchAccount,
+    executionHandler: fetchService,
   },
 ];

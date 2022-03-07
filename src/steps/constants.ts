@@ -1,17 +1,17 @@
 import { RelationshipClass } from '@jupiterone/integration-sdk-core';
 
 export const Steps = {
-  ACCOUNT: 'fetch-account',
+  SERVICE: 'fetch-service',
   DEVICES: 'fetch-devices',
 
-  RELATIONSHIPS_ACCOUNT_DEVICE: 'build-account-device-relationships',
+  RELATIONSHIPS_SERVICE_DEVICE: 'build-service-device-relationships',
 };
 
 export const Entities = {
-  ACCOUNT: {
-    resourceName: 'Account',
-    _type: 'netbox_account',
-    _class: ['Account'],
+  SERVICE: {
+    resourceName: 'Service',
+    _type: 'netbox_service',
+    _class: ['Service'],
     schema: {
       properties: {
         netboxVersion: { type: ['string', 'null'] },
@@ -60,9 +60,9 @@ export const Entities = {
 };
 
 export const Relationships = {
-  ACCOUNT_HAS_DEVICE: {
-    _type: 'netbox_account_has_device',
-    sourceType: Entities.ACCOUNT._type,
+  SERVICE_HAS_DEVICE: {
+    _type: 'netbox_service_has_device',
+    sourceType: Entities.SERVICE._type,
     _class: RelationshipClass.HAS,
     targetType: Entities.DEVICE._type,
   },

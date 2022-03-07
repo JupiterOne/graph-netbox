@@ -98,8 +98,8 @@ The following entities are created:
 
 | Resources | Entity `_type`   | Entity `_class` |
 | --------- | ---------------- | --------------- |
-| Account   | `netbox_account` | `Account`       |
 | Device    | `netbox_device`  | `Device`        |
+| Service   | `netbox_service` | `Service`       |
 
 ### Relationships
 
@@ -107,7 +107,7 @@ The following relationships are created:
 
 | Source Entity `_type` | Relationship `_class` | Target Entity `_type` |
 | --------------------- | --------------------- | --------------------- |
-| `netbox_account`      | **HAS**               | `netbox_device`       |
+| `netbox_service`      | **HAS**               | `netbox_device`       |
 
 <!--
 ********************************************************************************

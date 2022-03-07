@@ -20,14 +20,14 @@ test('fetch-devices', async () => {
   expect(stepResult).toMatchStepMetadata(stepConfig);
 });
 
-test('build-account-device-relationships', async () => {
+test('build-service-device-relationships', async () => {
   recording = setupRecording({
     directory: __dirname,
-    name: 'build-account-device-relationships',
+    name: 'build-service-device-relationships',
   });
 
   const stepConfig = buildStepTestConfigForStep(
-    Steps.RELATIONSHIPS_ACCOUNT_DEVICE,
+    Steps.RELATIONSHIPS_SERVICE_DEVICE,
   );
   const stepResult = await executeStepWithDependencies(stepConfig);
   expect(stepResult).toMatchStepMetadata(stepConfig);

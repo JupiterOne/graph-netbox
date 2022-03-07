@@ -1,11 +1,11 @@
 import { createIntegrationEntity } from '@jupiterone/integration-sdk-core';
 import { Entities } from '../constants';
 
-export function buildAccountEntityKey(accountName: string) {
-  return `netbox_account_${accountName}`;
+export function buildServiceEntityKey(accountName: string) {
+  return `netbox_service_${accountName}`;
 }
 
-export function createAccountEntity({
+export function createServiceEntity({
   accountName,
   data,
   host,
@@ -18,11 +18,13 @@ export function createAccountEntity({
     entityData: {
       source: data,
       assign: {
-        _type: Entities.ACCOUNT._type,
-        _class: Entities.ACCOUNT._class,
-        _key: buildAccountEntityKey(accountName),
+        _type: Entities.SERVICE._type,
+        _class: Entities.SERVICE._class,
+        _key: buildServiceEntityKey(accountName),
         name: accountName,
         displayName: accountName,
+        category: ['infrastructure', 'network'],
+        function: ['networking'],
         netboxVersion: data['netbox-version'],
         pythonVersion: data['python-version'],
         djangoVersion: data['django-version'],

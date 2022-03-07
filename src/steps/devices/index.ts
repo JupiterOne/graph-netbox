@@ -9,7 +9,7 @@ import {
 import { NetboxClient } from '../../client';
 import { IntegrationConfig } from '../../config';
 import { withUnauthorizedJobLogHandler } from '../../util/response';
-import { buildAccountEntityKey } from '../account/converter';
+import { buildServiceEntityKey } from '../service/converter';
 import { Entities, Steps, Relationships } from '../constants';
 import { createDeviceEntity } from './converter';
 
@@ -32,18 +32,18 @@ export async function fetchDevices({
   });
 }
 
-export async function buildAccountHasDeviceRelationship({
+export async function buildServiceHasDeviceRelationship({
   instance,
   jobState,
 }: IntegrationStepExecutionContext<IntegrationConfig>) {
-  const accountEntity = await jobState.findEntity(
-    buildAccountEntityKey(instance.name),
+  const serviceEntity = await jobState.findEntity(
+    buildServiceEntityKey(instance.name),
   );
 
-  if (!accountEntity) {
+  if (!serviceEntity) {
     throw new IntegrationError({
       code: 'MISSING_REQUIRED_ENTITY',
-      message: 'Missing required account entity',
+      message: 'Missing required service entity',
       fatal: true,
     });
   }
@@ -53,7 +53,7 @@ export async function buildAccountHasDeviceRelationship({
     async (deviceEntity) => {
       await jobState.addRelationship(
         createDirectRelationship({
-          from: accountEntity,
+          from: serviceEntity,
           to: deviceEntity,
           _class: RelationshipClass.HAS,
         }),
@@ -72,11 +72,11 @@ export const deviceSteps: IntegrationStep<IntegrationConfig>[] = [
     executionHandler: fetchDevices,
   },
   {
-    id: Steps.RELATIONSHIPS_ACCOUNT_DEVICE,
-    name: 'Build netbox_account -HAS-> netbox_device relationships',
+    id: Steps.RELATIONSHIPS_SERVICE_DEVICE,
+    name: 'Build netbox_service -HAS-> netbox_device relationships',
     entities: [],
-    relationships: [Relationships.ACCOUNT_HAS_DEVICE],
-    dependsOn: [Steps.ACCOUNT, Steps.DEVICES],
-    executionHandler: buildAccountHasDeviceRelationship,
+    relationships: [Relationships.SERVICE_HAS_DEVICE],
+    dependsOn: [Steps.SERVICE, Steps.DEVICES],
+    executionHandler: buildServiceHasDeviceRelationship,
   },
 ];
