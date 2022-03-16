@@ -1,9 +1,11 @@
 import {
   IntegrationExecutionContext,
-  // IntegrationValidationError,
   IntegrationInstanceConfigFieldMap,
   IntegrationInstanceConfig,
+  IntegrationValidationError,
+  IntegrationProviderAuthenticationError,
 } from '@jupiterone/integration-sdk-core';
+import { NetboxClient, NetboxRequestError } from './client';
 
 /**
  * A type describing the configuration fields required to execute the
@@ -20,10 +22,10 @@ import {
  * `instance.config` in a UI.
  */
 export const instanceConfigFields: IntegrationInstanceConfigFieldMap = {
-  clientId: {
+  host: {
     type: 'string',
   },
-  clientSecret: {
+  apiKey: {
     type: 'string',
     mask: true,
   },
@@ -34,19 +36,30 @@ export const instanceConfigFields: IntegrationInstanceConfigFieldMap = {
  * same properties defined by `instanceConfigFields`.
  */
 export interface IntegrationConfig extends IntegrationInstanceConfig {
-  /**
-   * The provider API client ID used to authenticate requests.
-   */
-  clientId: string;
-
-  /**
-   * The provider API client secret used to authenticate requests.
-   */
-  clientSecret: string;
+  host: string;
+  apiKey: string;
 }
 
 export async function validateInvocation(
   context: IntegrationExecutionContext<IntegrationConfig>,
 ) {
-  return Promise.resolve();
+  const { host, apiKey } = context.instance.config;
+
+  if (!host || !apiKey) {
+    throw new IntegrationValidationError(
+      'Config requires all of {host, apiKey}',
+    );
+  }
+
+  const client = new NetboxClient({ host, apiKey });
+
+  try {
+    await client.status();
+  } catch (err) {
+    const responseError = err as NetboxRequestError;
+
+    throw new IntegrationProviderAuthenticationError({
+      ...responseError,
+    });
+  }
 }
