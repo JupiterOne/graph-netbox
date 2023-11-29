@@ -49,8 +49,7 @@ export class NetboxRequestError extends IntegrationProviderAPIError {
 
 async function withApiErrorHandler<T>(fn: () => Promise<T>): Promise<T> {
   try {
-    const response = await fn();
-    return response;
+    return await fn();
   } catch (err) {
     throw new NetboxRequestError(err);
   }

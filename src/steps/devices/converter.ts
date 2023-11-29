@@ -14,14 +14,15 @@ export function createDeviceEntity(device: any, host: string) {
         _class: Entities.DEVICE._class,
         _key: `netbox_device_${device.id}`,
         id: device.id.toString(),
+        deviceId: device.id.toString(),
         name: device.name || '',
         displayName: device.display,
         category: 'network',
 
         // `device_type` data
+        make: device.device_type?.manufacturer?.display || null,
         model: device.device_type?.model || null,
         slug: device.device_type?.slug || null,
-        manufacturer: device.device_type?.manufacturer?.name,
 
         // `device_role` data
         roleId: device.device_role?.id,
@@ -53,9 +54,9 @@ export function createDeviceEntity(device: any, host: string) {
         clusterName: device.cluster?.name,
 
         vcPosition: device.vc_position,
-        make: null,
         active: device.status?.value === 'active',
         serial: device.serial,
+        lastSeenOn: parseTimePropertyValue(device.last_updated),
         comments: truncateEntityPropertyValue(device.comments),
         createdOn: parseTimePropertyValue(device.created),
         updatedOn: parseTimePropertyValue(device.last_updated),
