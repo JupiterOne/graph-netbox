@@ -9,14 +9,6 @@ import {
 } from '@jupiterone/integration-sdk-core';
 
 describe('#validateInvocation', () => {
-  let recording: Recording;
-
-  afterEach(async () => {
-    if (recording) {
-      await recording.stop();
-    }
-  });
-
   it('requires valid config', async () => {
     const executionContext = createMockExecutionContext<IntegrationConfig>({
       instanceConfig: {} as IntegrationConfig,
