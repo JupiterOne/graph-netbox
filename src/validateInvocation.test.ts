@@ -1,7 +1,4 @@
-import {
-  createMockExecutionContext,
-  Recording,
-} from '@jupiterone/integration-sdk-testing';
+import { createMockExecutionContext } from '@jupiterone/integration-sdk-testing';
 import { IntegrationConfig, validateInvocation } from './config';
 import {
   IntegrationProviderAuthenticationError,
