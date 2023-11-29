@@ -12,5 +12,3 @@ demo data is reset nightly.
   - Add `Allowed IPs` as needed for the JupiterOne platform to make requests.
 - Copy the Key value and set API_KEY in the .env file
 - In the .env file, set HOST to https://demo.netbox.dev
-
-
