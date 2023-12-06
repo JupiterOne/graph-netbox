@@ -1,4 +1,4 @@
 ---
-sourceId: managed:template
+sourceId: managed:netbox
 integrationDefinitionId: '${integration_definition_id}'
 questions: []

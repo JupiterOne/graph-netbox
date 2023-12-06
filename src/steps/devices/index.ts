@@ -9,7 +9,7 @@ import {
 import { NetboxClient } from '../../client';
 import { IntegrationConfig } from '../../config';
 import { withUnauthorizedJobLogHandler } from '../../util/response';
-import { buildServiceEntityKey } from '../service/converter';
+import { buildServiceEntityKey } from '../services/converter';
 import { Entities, Steps, Relationships } from '../constants';
 import { createDeviceEntity } from './converter';
 

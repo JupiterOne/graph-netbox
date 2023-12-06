@@ -1,6 +1,6 @@
-import { serviceSteps } from './service';
+import { servicesSteps } from './services';
 import { deviceSteps } from './devices';
 
-const integrationSteps = [...serviceSteps, ...deviceSteps];
+const integrationSteps = [...servicesSteps, ...deviceSteps];
 
 export { integrationSteps };

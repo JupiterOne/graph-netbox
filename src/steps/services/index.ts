@@ -26,10 +26,10 @@ export async function fetchService({
   );
 }
 
-export const serviceSteps: IntegrationStep<IntegrationConfig>[] = [
+export const servicesSteps: IntegrationStep<IntegrationConfig>[] = [
   {
     id: Steps.SERVICE,
-    name: 'Fetch Service',
+    name: 'Fetch Services',
     entities: [Entities.SERVICE],
     relationships: [],
     dependsOn: [],
