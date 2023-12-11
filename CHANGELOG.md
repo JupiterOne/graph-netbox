@@ -1,3 +1,15 @@
+# v1.1.1 (Mon Dec 11 2023)
+
+#### 🐛 Bug Fix
+
+- INT-10109: fix integration package release [#14](https://github.com/JupiterOne/graph-netbox/pull/14) ([@gastonyelmini](https://github.com/gastonyelmini))
+
+#### Authors: 1
+
+- Gaston Yelmini ([@gastonyelmini](https://github.com/gastonyelmini))
+
+---
+
 # v1.1.0 (Wed Dec 06 2023)
 
 #### 🚀 Enhancement
