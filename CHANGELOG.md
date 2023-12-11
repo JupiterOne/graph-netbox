@@ -2,7 +2,9 @@
 
 #### 🐛 Bug Fix
 
-- INT-10109: fix integration package release [#14](https://github.com/JupiterOne/graph-netbox/pull/14) ([@gastonyelmini](https://github.com/gastonyelmini))
+- INT-10109: fix integration package release
+  [#14](https://github.com/JupiterOne/graph-netbox/pull/14)
+  ([@gastonyelmini](https://github.com/gastonyelmini))
 
 #### Authors: 1
 
