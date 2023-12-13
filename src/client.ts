@@ -1,6 +1,5 @@
 import { IntegrationProviderAPIError } from '@jupiterone/integration-sdk-core';
 import axios from 'axios';
-import * as path from 'path';
 
 type NetboxClientParams = {
   host: string;
