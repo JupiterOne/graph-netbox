@@ -30,7 +30,7 @@ export const instanceConfigFields: IntegrationInstanceConfigFieldMap = {
 export interface IntegrationConfig extends IntegrationInstanceConfig {
   host: string;
   apiKey: string;
-  disableTlsVerification: string;
+  disableTlsVerification?: boolean;
 }
 
 export async function validateInvocation(

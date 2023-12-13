@@ -13,10 +13,14 @@ if (process.env.LOAD_ENV) {
 
 const DEFAULT_HOST = 'https://demo.netbox.dev';
 const DEFAULT_API_KEY = 'dummy-api-key';
+const DEFAULT_DISABLE_TLS_VERIFICATION = false;
 
 export const integrationConfig: IntegrationConfig = {
   host: process.env.HOST || DEFAULT_HOST,
   apiKey: process.env.API_KEY || DEFAULT_API_KEY,
+  disableTlsVerification:
+    Boolean(process.env.DISABLE_TLS_VERIFICATION) ||
+    DEFAULT_DISABLE_TLS_VERIFICATION,
 };
 
 export function buildStepTestConfigForStep(stepId: string): StepTestConfig {
