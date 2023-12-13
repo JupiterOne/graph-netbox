@@ -1,5 +1,6 @@
 import { IntegrationProviderAPIError } from '@jupiterone/integration-sdk-core';
 import axios from 'axios';
+import * as path from 'path';
 
 type NetboxClientParams = {
   host: string;
@@ -14,7 +15,7 @@ type NetboxApiResponse<TItem> = {
 };
 
 function buildApiUrl(host: string, endpoint: string) {
-  return host + endpoint;
+  return path.join(host, endpoint);
 }
 
 export class NetboxRequestError extends IntegrationProviderAPIError {
