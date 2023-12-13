@@ -15,7 +15,7 @@ type NetboxApiResponse<TItem> = {
 };
 
 function buildApiUrl(host: string, endpoint: string) {
-  return path.join(host, endpoint);
+  return new URL(endpoint, host).href;
 }
 
 export class NetboxRequestError extends IntegrationProviderAPIError {
