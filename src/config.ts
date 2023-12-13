@@ -47,7 +47,7 @@ export async function validateInvocation(
   if (disableTlsVerification) {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
     context.logger.warn(
-      `Disabled TLS certificate verification based on .env.  If possible, please install valid TLS certificates into Netbox server.`,
+      `Disabled TLS certificate verification based on .env.  Please install a valid TLS certificate on the Netbox server.`,
     );
     context.logger.publishInfoEvent({
       name: IntegrationInfoEventName.Info,
