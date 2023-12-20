@@ -2,8 +2,11 @@
 
 #### 🐛 Bug Fix
 
-- Add tls reject [#16](https://github.com/JupiterOne/graph-netbox/pull/16) ([@VDubber](https://github.com/VDubber))
-- INT-10109: remove GH action [#15](https://github.com/JupiterOne/graph-netbox/pull/15) ([@gastonyelmini](https://github.com/gastonyelmini))
+- Add tls reject [#16](https://github.com/JupiterOne/graph-netbox/pull/16)
+  ([@VDubber](https://github.com/VDubber))
+- INT-10109: remove GH action
+  [#15](https://github.com/JupiterOne/graph-netbox/pull/15)
+  ([@gastonyelmini](https://github.com/gastonyelmini))
 
 #### Authors: 2
 
