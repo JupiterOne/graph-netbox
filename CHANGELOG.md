@@ -1,3 +1,15 @@
+# v1.1.3 (Thu Dec 21 2023)
+
+#### 🐛 Bug Fix
+
+- Update dockerfile [#17](https://github.com/JupiterOne/graph-netbox/pull/17) ([@VDubber](https://github.com/VDubber))
+
+#### Authors: 1
+
+- Samuel Poulton ([@VDubber](https://github.com/VDubber))
+
+---
+
 # v1.1.2 (Thu Dec 14 2023)
 
 #### 🐛 Bug Fix
