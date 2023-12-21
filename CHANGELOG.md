@@ -1,3 +1,15 @@
+# v1.1.4 (Thu Dec 21 2023)
+
+#### 🐛 Bug Fix
+
+- Mark disableTlsVerification config field as optional [#18](https://github.com/JupiterOne/graph-netbox/pull/18) ([@VDubber](https://github.com/VDubber))
+
+#### Authors: 1
+
+- Samuel Poulton ([@VDubber](https://github.com/VDubber))
+
+---
+
 # v1.1.3 (Thu Dec 21 2023)
 
 #### 🐛 Bug Fix
