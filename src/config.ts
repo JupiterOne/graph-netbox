@@ -20,6 +20,7 @@ export const instanceConfigFields: IntegrationInstanceConfigFieldMap = {
   disableTlsVerification: {
     type: 'boolean',
     mask: false,
+    optional: true,
   },
 };
 

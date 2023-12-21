@@ -2,7 +2,8 @@
 
 #### 🐛 Bug Fix
 
-- Update dockerfile [#17](https://github.com/JupiterOne/graph-netbox/pull/17) ([@VDubber](https://github.com/VDubber))
+- Update dockerfile [#17](https://github.com/JupiterOne/graph-netbox/pull/17)
+  ([@VDubber](https://github.com/VDubber))
 
 #### Authors: 1
 
