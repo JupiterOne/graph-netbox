@@ -2,7 +2,9 @@
 
 #### 🐛 Bug Fix
 
-- Mark disableTlsVerification config field as optional [#18](https://github.com/JupiterOne/graph-netbox/pull/18) ([@VDubber](https://github.com/VDubber))
+- Mark disableTlsVerification config field as optional
+  [#18](https://github.com/JupiterOne/graph-netbox/pull/18)
+  ([@VDubber](https://github.com/VDubber))
 
 #### Authors: 1
 
